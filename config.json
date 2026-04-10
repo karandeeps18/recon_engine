@@ -1,0 +1,12 @@
+{
+ "openfigi_api_key": "f7344eec-559f-464a-915e-a7be2965ee70",
+ "recon_dimension": "vehicle",
+ "start_date": "2025-02-05",
+ "end_date": "2026-03-20",
+ "output_file": "output/recon_results.xlsx",
+ "system_a_file": "data/system_a/system_a_posns.csv",
+ "system_b_file": "data/system_b/system_b_posns.json",
+ "cache_file": "data/mappings/figi_cache.json"
+}
+
+

@@ -1,0 +1,4 @@
+# packages for parsing and recon 
+python-dotenv
+pandas 
+numpy 

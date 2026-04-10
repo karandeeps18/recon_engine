@@ -1,0 +1,8 @@
+.venv/
+.env 
+__pycache__/
+data/mappings/figi_cache.json
+output/
+.DS_Store
+
+
