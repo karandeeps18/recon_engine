@@ -6,7 +6,8 @@
  "output_file": "output/recon_results.xlsx",
  "system_a_file": "data/system_a/system_a_posns.csv",
  "system_b_file": "data/system_b/system_b_posns.json",
- "cache_file": "data/mappings/figi_cache.json"
+ "cache_file": "data/mappings/figi_cache.json",
+ "inspect_file": "data/mappings/raw_repsonse.json"
 }
 
 

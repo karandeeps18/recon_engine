@@ -1,0 +1,162 @@
+[
+    {
+        "data": [
+            {
+                "figi": "BBG00LV100N0",
+                "name": "BANK7 CORP",
+                "ticker": "BSVN",
+                "exchCode": "US",
+                "compositeFIGI": "BBG00LV100N0",
+                "securityType": "Common Stock",
+                "marketSector": "Equity",
+                "shareClassFIGI": "BBG00LV101D9",
+                "securityType2": "Common Stock",
+                "securityDescription": "BSVN"
+            }
+        ]
+    },
+    {
+        "data": [
+            {
+                "figi": "BBG000BWGYF8",
+                "name": "VULCAN MATERIALS CO",
+                "ticker": "VMC",
+                "exchCode": "US",
+                "compositeFIGI": "BBG000BWGYF8",
+                "securityType": "Common Stock",
+                "marketSector": "Equity",
+                "shareClassFIGI": "BBG001S5X8R2",
+                "securityType2": "Common Stock",
+                "securityDescription": "VMC"
+            }
+        ]
+    },
+    {
+        "data": [
+            {
+                "figi": "BBG01YRJND81",
+                "name": "CUSHMAN & WAKEFIELD LTD",
+                "ticker": "CWK",
+                "exchCode": "US",
+                "compositeFIGI": "BBG01YRJND81",
+                "securityType": "Common Stock",
+                "marketSector": "Equity",
+                "shareClassFIGI": "BBG01YRJNDB7",
+                "securityType2": "Common Stock",
+                "securityDescription": "CWK"
+            }
+        ]
+    },
+    {
+        "data": [
+            {
+                "figi": "BBG00YB1ZD58",
+                "name": "SOFI TECHNOLOGIES INC",
+                "ticker": "SOFI",
+                "exchCode": "US",
+                "compositeFIGI": "BBG00YB1ZD58",
+                "securityType": "Common Stock",
+                "marketSector": "Equity",
+                "shareClassFIGI": "BBG00YB1ZF08",
+                "securityType2": "Common Stock",
+                "securityDescription": "SOFI"
+            }
+        ]
+    },
+    {
+        "data": [
+            {
+                "figi": "BBG00GBV88T6",
+                "name": "PEABODY ENERGY CORP",
+                "ticker": "BTU",
+                "exchCode": "US",
+                "compositeFIGI": "BBG00GBV88T6",
+                "securityType": "Common Stock",
+                "marketSector": "Equity",
+                "shareClassFIGI": "BBG00GBV89J5",
+                "securityType2": "Common Stock",
+                "securityDescription": "BTU"
+            }
+        ]
+    },
+    {
+        "data": [
+            {
+                "figi": "BBG000BCTLF6",
+                "name": "BANK OF AMERICA CORP",
+                "ticker": "BAC",
+                "exchCode": "US",
+                "compositeFIGI": "BBG000BCTLF6",
+                "securityType": "Common Stock",
+                "marketSector": "Equity",
+                "shareClassFIGI": "BBG001S5P0Y0",
+                "securityType2": "Common Stock",
+                "securityDescription": "BAC"
+            }
+        ]
+    },
+    {
+        "data": [
+            {
+                "figi": "BBG000N7MXL8",
+                "name": "ETSY INC",
+                "ticker": "ETSY",
+                "exchCode": "US",
+                "compositeFIGI": "BBG000N7MXL8",
+                "securityType": "Common Stock",
+                "marketSector": "Equity",
+                "shareClassFIGI": "BBG001T53625",
+                "securityType2": "Common Stock",
+                "securityDescription": "ETSY"
+            }
+        ]
+    },
+    {
+        "data": [
+            {
+                "figi": "BBG01S4RJCG9",
+                "name": "FUSEMACHINES INC",
+                "ticker": "FUSE",
+                "exchCode": "US",
+                "compositeFIGI": "BBG01S4RJCG9",
+                "securityType": "Common Stock",
+                "marketSector": "Equity",
+                "shareClassFIGI": "BBG01S4RJD13",
+                "securityType2": "Common Stock",
+                "securityDescription": "FUSE"
+            }
+        ]
+    },
+    {
+        "data": [
+            {
+                "figi": "BBG0160DYCH4",
+                "name": "RXO INC",
+                "ticker": "RXO",
+                "exchCode": "US",
+                "compositeFIGI": "BBG0160DYCH4",
+                "securityType": "Common Stock",
+                "marketSector": "Equity",
+                "shareClassFIGI": "BBG0160DYDC7",
+                "securityType2": "Common Stock",
+                "securityDescription": "RXO"
+            }
+        ]
+    },
+    {
+        "data": [
+            {
+                "figi": "BBG000D52545",
+                "name": "WENDY'S CO/THE",
+                "ticker": "WEN",
+                "exchCode": "US",
+                "compositeFIGI": "BBG000D52545",
+                "securityType": "Common Stock",
+                "marketSector": "Equity",
+                "shareClassFIGI": "BBG001S7HBX2",
+                "securityType2": "Common Stock",
+                "securityDescription": "WEN"
+            }
+        ]
+    }
+]

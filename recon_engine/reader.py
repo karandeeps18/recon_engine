@@ -6,6 +6,7 @@ col_names = {"Strategy":  "strategy",
              "Vehicle" :  "vehicle",
              "Date"    :   "date",
              "FIGI"    : "figi",
+             "Symbol"  : "symbol",
              "Quantity" : "quantity", 
              "Market Value" : "market_value"   
 }
