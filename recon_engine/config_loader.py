@@ -11,7 +11,7 @@ def load_config(path="config.json"):
     # basic requirements in the config checks 
     # openfigi api key, output and input paths, recon_dimension, start_data and end_date     
     # fail    
-    return print(config) 
+    return config 
 
 
 # test
