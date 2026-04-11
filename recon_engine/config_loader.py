@@ -8,8 +8,8 @@ def load_config(path="config.json"):
     with open(path, 'r') as f:
         config = json.load(f)
         
-    # basic requirements in the config checks 
-    # openfigi api key, output and input paths, recon_dimension, start_data and end_date     
+    # TODO: basic requirements in the config checks 
+    # TODO: openfigi api key, output and input paths, recon_dimension, start_data and end_date     
     # fail    
     return config 
 

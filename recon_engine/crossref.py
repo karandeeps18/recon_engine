@@ -1,4 +1,6 @@
 # this is crossref table which saves the raw response into a reference table
+# TODO: Create a robust filter logic currently using data_list[0]
+# TODO: Add SCD2 or CrossRef Pattern - make Point-In-Time safe lookup - isActive, asOfDate  
 import json 
 
 def create_ticker_map(file_path):

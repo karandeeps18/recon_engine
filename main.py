@@ -25,7 +25,7 @@ def main():
     unq_figis = sys_a['figi'].unique().tolist()
     
     # top 10 figis only --------------------- change later -------------
-    unq_figis = unq_figis[:10]
+    # unq_figis = unq_figis[:10]
     
     # call the openfigiclient 
     client = OpenFigiClient(api_key=config['openfigi_api_key'])
