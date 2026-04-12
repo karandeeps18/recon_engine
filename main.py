@@ -1,12 +1,13 @@
 import sys 
 import json
+import logging
 from recon_engine.config_loader import load_config
 from recon_engine.reader import read_system_a, read_system_b
 from recon_engine.openfigi_client import OpenFigiClient 
 from recon_engine.cache import create_ticker_map
 from recon_engine.cache import load_cache
 from recon_engine.cache import save_cache
-import logging
+from recon_engine.recon import reconcile
 
 
 logging.basicConfig(level=logging.INFO)
@@ -55,9 +56,12 @@ def main():
         # call the cache to create a mapping table
         cache = create_ticker_map(inspect_file, existing_cache=cache)
         save_cache(cache, config['cache_file'])
-        
     else:
         logging.info("FIGI present in Cache, No API Calls Needed")
+        
+    # reconcilation 
+    reconciled = reconcile(sys_a, sys_b, cache, config)
+    reconciled.to_csv("/Users/karandeepsonewane/Projects/Recon_engine/output/reconciled_veh.csv")
 
 if __name__ == "__main__":
     main()
