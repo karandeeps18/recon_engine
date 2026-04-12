@@ -1,6 +1,9 @@
 # reader.py reads the data from both System_A and System_B
 import pandas as pd  
 import json 
+import logging
+
+logger = logging.getLogger(__name__)
 
 col_names = {"Strategy":  "strategy",
              "Vehicle" :  "vehicle",
@@ -14,14 +17,24 @@ col_names = {"Strategy":  "strategy",
 # read system a 
 def read_system_a(filepath):
     sys_a = pd.read_csv(filepath)
-    # TODO: normalize the column names for handling 
-    # strategy, vehicle, date, figi, quantity, market_value  
     sys_a = sys_a.rename(columns=col_names)
+        
     # type enforcement 
     sys_a["date"] = pd.to_datetime(sys_a["date"])
     sys_a["quantity"] = sys_a["quantity"].astype(dtype=float)
     sys_a["market_value"] = sys_a["market_value"].astype(dtype=float)
     print("Total Unique FIGIs", sys_a["figi"].nunique())
+    
+    # strip white spaces from string columns 
+    sys_a["figi"] = sys_a["figi"].str.strip()
+    sys_a["strategy"] = sys_a["strategy"].str.strip()
+    sys_a["vehicle"] = sys_a["vehicle"].str.strip()
+    
+    # handling bad data at source: figis are null or empty 
+    bad_figis = sys_a["figi"].isna() | (sys_a["figi"] == "")
+    if bad_figis.any():
+        logger.warning(f"Total Empty/Null FIGIs in Sys A: {bad_figis.sum()}")
+    sys_a['isValidFigi'] = ~bad_figis
     return sys_a
 
 
