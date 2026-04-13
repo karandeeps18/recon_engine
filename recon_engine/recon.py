@@ -3,8 +3,8 @@ import pandas as pd
 # """ Summary of Reconcilitation Workflow
 #     1. filter the sys_a data based on isValid flag for the 
 #     2. filter by date using config start and end dates 
-#     3. if recon by vehicle -> join key = [strategy, vehicle, symbol, date] 
-#         if recon by strategy -> aggregate by strategy -> join key = [strategy, symbol, date]
+#     3. if recon by vehicle -> aggregate + join key = [strategy, vehicle, symbol, date] 
+#         if recon by strategy -> aggregate by strategy + join key = [strategy, symbol, date]
 #     4. clasify based on outer join
 #         if matched then 'match'
 #         if break - qty break, mv_break, both_break, matched
@@ -34,12 +34,26 @@ def reconcile(sys_a, sys_b, cache, config):
     
     # if recon_dimension is vehicle merge on all keys, else merge aggregated view on strategy, date, symbol
     if config['recon_dimension'] == 'vehicle':
+        
+        # aggreagted on vehicle level to avoid row exlposion 
+        sys_a_agg = sys_a.groupby(['strategy', 'vehicle', 'date', 'symbol'],
+                                  as_index=False).agg(
+                                  quantity_a=('quantity', 'sum'),
+                                  market_value_a=('market_value', 'sum')
+                                )
+        
+        sys_b_agg = sys_b.groupby(['strategy', 'vehicle', 'date', 'symbol'],
+                                  as_index=False).agg(
+                                  quantity_b=('quantity', 'sum'),
+                                  market_value_b=('market_value', 'sum')
+                                )
+
         merged = pd.merge(sys_a, 
-                                sys_b, 
-                                on=['strategy', 'vehicle', 'symbol', 'date'],
-                                how="outer", 
-                                suffixes=("_a", "_b"), 
-                                indicator=True)
+                            sys_b, 
+                            on=['strategy', 'vehicle', 'symbol', 'date'],
+                            how="outer", 
+                            suffixes=("_a", "_b"), 
+                            indicator=True)
         
     else:
         # aggregat sys_a and sys_b on ['strategy', 'date', 'symbol'] to get strategy view

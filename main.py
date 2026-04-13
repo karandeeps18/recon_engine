@@ -14,14 +14,15 @@ logging.basicConfig(level=logging.INFO)
 
 
 def main():
-    """_summary_
+    """
     This is the main entry point for the reconciliation engine 
     This will orchestrate the loading, fetching, caching, reconciliation, and Output 
     """
     # Load config.json 
-    config = load_config("test_config.json")
-    # load system a and system b 
-    # later need to add the file handling using glob 
+    # provide json with complete 
+    config = load_config("config.json")
+    
+    # load system a and system b  
     print(config)
     sys_a = read_system_a(config['system_a_file'])
     sys_b = read_system_b(config['system_b_file'])
@@ -32,7 +33,7 @@ def main():
     valid_figi_a = sys_a[sys_a['isValidFigi']]
     invalid_figi_a = sys_a[~sys_a['isValidFigi']]
     logging.info("Total Invalid FIGI in System A: %s", len(invalid_figi_a))
-    print(len(invalid_figi_a))
+    
     # load cache 
     cache = load_cache(config['cache_file'])
     

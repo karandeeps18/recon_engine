@@ -33,7 +33,7 @@ def write_excel(recon_results, config):
     total = len(recon_results)
     
     summary_rows = [
-        ["Postion Reconciliation Report"],
+        ["Position Reconciliation Report"],
         [], 
         ["Recon Dimension", config.get("recon_dimension")], 
         ["Start Date", config.get("start_date")],
