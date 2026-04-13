@@ -19,7 +19,7 @@ def main():
     This will orchestrate the loading, fetching, caching, reconciliation, and Output 
     """
     # Load config.json 
-    config = load_config("config.json")
+    config = load_config("test_config.json")
     # load system a and system b 
     # later need to add the file handling using glob 
     print(config)

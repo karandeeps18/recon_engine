@@ -21,7 +21,7 @@ def write_excel(recon_results, config):
     # split sheets into 6 buckets for reporting 
     qty_breaks = recon_results[recon_results["status"] == "qty_break"]
     mv_breaks = recon_results[recon_results["status"] == "mv_break"]
-    both_breaks = recon_results[recon_results["status"] == "both_break"]
+    both_breaks = recon_results[recon_results["status"] == "both_breaks"]
     matched = recon_results[recon_results["status"] == "matched"]
     a_only = recon_results[recon_results["status"] == "system_a_only"]
     b_only = recon_results[recon_results["status"] == "system_b_only"]
