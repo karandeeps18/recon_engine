@@ -61,7 +61,7 @@ def reconcile(sys_a, sys_b, cache, config):
     merged['_merge'] = merged['_merge'].astype(str)
     
     # for row level match - to find out orphan in System A or System B 
-    # status map for o(1) lookup 
+    # status map for lookup 
     status_map = {
         "both":       "matched",
         "left_only":  "system_a_only",
@@ -78,7 +78,6 @@ def reconcile(sys_a, sys_b, cache, config):
     #   1. qty_break != 0 and mv_break == 0 (+ tolerance) - as qty_break 
     #   2. mv_break != 0 (+ tolerance) and qty_break = 0 - as mv_break 
     #   3. qty_break != 0 and mv_break != 0 (+ tolerance) - as both_break 
-    
     # get the config tolerance for mv_break 
     mv_tolerance = config.get('tolerance_market_value', 0)
     

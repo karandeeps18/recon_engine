@@ -8,7 +8,7 @@ from recon_engine.cache import create_ticker_map
 from recon_engine.cache import load_cache
 from recon_engine.cache import save_cache
 from recon_engine.recon import reconcile
-
+from recon_engine.excel_writer import write_excel
 
 logging.basicConfig(level=logging.INFO)
 
@@ -61,7 +61,9 @@ def main():
         
     # reconcilation 
     reconciled = reconcile(sys_a, sys_b, cache, config)
-    reconciled.to_csv("/Users/karandeepsonewane/Projects/Recon_engine/output/reconciled_strategy.csv")
-
+    
+    # create report 
+    write_excel(reconciled, config)
+    
 if __name__ == "__main__":
     main()
