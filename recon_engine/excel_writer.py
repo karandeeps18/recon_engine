@@ -47,7 +47,15 @@ def write_excel(recon_results, config):
         ["Missing in System B", len(a_only)],
         ["Missing in System A", len(b_only)],
         [],
-        ["Total", total],
+        ["Total Rows Recon", total],
+        ["Total MV Break ($) (abs)", mv_breaks["mv_break"].abs().sum()],
+        ["Total Qty Break (abs)", qty_breaks["qty_break"].abs().sum()],
+        ["Total MV Break ($) (net)", mv_breaks["mv_break"].sum()],
+        ["Total Qty Break (net)", qty_breaks["qty_break"].sum()],
+        [],
+        ["Note: breaks are computed as System A minus System B."],
+        ["Negative net = System A reports less than System B."],
+        ["Positive net = System A reports more than System B."]
     ]
     
     # Dropping extra columns for each sheet

@@ -48,8 +48,8 @@ def reconcile(sys_a, sys_b, cache, config):
                                   market_value_b=('market_value', 'sum')
                                 )
 
-        merged = pd.merge(sys_a, 
-                            sys_b, 
+        merged = pd.merge(sys_a_agg, 
+                            sys_b_agg, 
                             on=['strategy', 'vehicle', 'symbol', 'date'],
                             how="outer", 
                             suffixes=("_a", "_b"), 

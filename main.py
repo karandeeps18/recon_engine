@@ -26,8 +26,6 @@ def main():
     print(config)
     sys_a = read_system_a(config['system_a_file'])
     sys_b = read_system_b(config['system_b_file'])
-    print(sys_a.head())
-    print(sys_b.head())
     
     # extract unique figis from the system A 
     valid_figi_a = sys_a[sys_a['isValidFigi']]

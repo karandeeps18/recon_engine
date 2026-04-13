@@ -1,3 +1,4 @@
+# config_loader.py loads the config.json for requirements 
 import json 
 import os 
 
@@ -6,14 +7,12 @@ def load_config(path="config.json"):
         raise FileNotFoundError("Config File Not Found")
     
     with open(path, 'r') as f:
-        config = json.load(f)
+        config = json.load(f)   
         
-    # TODO: basic requirements in the config checks 
-    # TODO: openfigi api key, output and input paths, recon_dimension, start_data and end_date     
-    # fail    
+    # validate required keys
+    required = ["openfigi_api_key", "system_a_file", "system_b_file",
+                "recon_dimension", "start_date", "end_date", "output_file"]
+    missing = [k for k in required if k not in config]
+    if missing:
+        raise ValueError(f"Missing config keys: {missing}")
     return config 
-
-
-# test
-if __name__ == "__main__":
-    test_config = load_config("config.json")
