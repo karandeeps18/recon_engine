@@ -61,7 +61,7 @@ def main():
         
     # reconcilation 
     reconciled = reconcile(sys_a, sys_b, cache, config)
-    reconciled.to_csv("/Users/karandeepsonewane/Projects/Recon_engine/output/reconciled_veh.csv")
+    reconciled.to_csv("/Users/karandeepsonewane/Projects/Recon_engine/output/reconciled_strategy.csv")
 
 if __name__ == "__main__":
     main()

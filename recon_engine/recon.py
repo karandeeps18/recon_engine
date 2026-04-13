@@ -8,7 +8,7 @@ import pandas as pd
 #         if recon by strategy -> aggregate by strategy -> join key = [strategy, symbol, date]
 #     4. clasify based on outer join
 #         if matched then 'match'
-#         if break - qty break, mv_break, 
+#         if break - qty break, mv_break, both_break, matched
 #         if orphan - exists in system_a_only or system_b_only
 #     """
 
@@ -53,10 +53,10 @@ def reconcile(sys_a, sys_b, cache, config):
         
         # merge aggreagted for recon by strategy
         merged = pd.merge(sys_a_agg, 
-                                     sys_b_agg, 
-                                     on=['strategy', 'date', 'symbol'],
-                                     how="outer", 
-                                     indicator=True)
+                            sys_b_agg, 
+                            on=['strategy', 'date', 'symbol'],
+                            how="outer", 
+                            indicator=True)
     # converting categorical _merge into str for manipulation
     merged['_merge'] = merged['_merge'].astype(str)
     
@@ -105,16 +105,5 @@ def reconcile(sys_a, sys_b, cache, config):
     # 4. perfect match 
     mask_perfect_match = both_mask & ~mask_qty_diff & ~mv_differs
     merged.loc[mask_perfect_match, "status"] = 'matched'
-    
-    return merged
-    
-    
-    
-    
         
-
-    
-    
-    
-    
-    
+    return merged
