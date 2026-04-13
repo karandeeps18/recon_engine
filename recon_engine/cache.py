@@ -1,7 +1,11 @@
+# cache.py
 import json
 import os 
 
 def create_ticker_map(file_path, existing_cache=None):
+    """
+    build {figi:ticker} cache mapping and save it to 
+    """
     with open(file_path, 'r') as f:
         raw_data = json.load(f)
         cache = existing_cache or {}
@@ -21,7 +25,7 @@ def create_ticker_map(file_path, existing_cache=None):
             if len(data_list) == 1:
                 record = data_list[0]
                 
-            # case 2: multiple match 
+            # case 2: multiple match -> use exchCode and securityType to resolve
             else: 
                 record = None 
                 for d in data_list:

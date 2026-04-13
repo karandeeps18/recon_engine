@@ -1,7 +1,6 @@
-# reconciliation.py 
 import pandas as pd
 
-# """_summary_
+# """ Summary of Reconcilitation Workflow
 #     1. filter the sys_a data based on isValid flag for the 
 #     2. filter by date using config start and end dates 
 #     3. if recon by vehicle -> join key = [strategy, vehicle, symbol, date] 
@@ -13,7 +12,12 @@ import pandas as pd
 #     """
 
 def reconcile(sys_a, sys_b, cache, config):
-
+    """
+    Reconcile positions between System A and System B
+    Supports vehicle and strategy-level dimensions
+    Returns DataFrame with qty_break, mv_break, and status columns
+    """
+    
     # filter data for only valid Figi 
     sys_a = sys_a[sys_a['isValidFigi']].copy()
     

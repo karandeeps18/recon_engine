@@ -55,24 +55,19 @@ def write_excel(recon_results, config):
         columns=["_merge", "status", "mv_diff"],
         errors="ignore"
     )
-    mv_breaks = mv_breaks.drop(
-        columns=["_merge", "status", "qty_diff"],
+    mv_breaks = mv_breaks.drop(columns=["_merge", "status", "qty_diff"],
         errors="ignore"
     )
-    both_breaks = both_breaks.drop(
-        columns=["_merge", "status"],
+    both_breaks = both_breaks.drop(columns=["_merge", "status"],
         errors="ignore"
     )
-    matched = matched.drop(
-        columns=["_merge", "status"],
+    matched = matched.drop(columns=["_merge", "status"],
         errors="ignore"
     )
-    a_only = a_only.drop(
-        columns=["_merge", "status"],
+    a_only = a_only.drop(columns=["_merge", "status"],
         errors="ignore"
     )
-    b_only = b_only.drop(
-        columns=["_merge", "status"],
+    b_only = b_only.drop(columns=["_merge", "status"],
         errors="ignore"
     )
     
